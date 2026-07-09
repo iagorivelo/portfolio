@@ -78,6 +78,9 @@ Precedência aplicada pelo sync (**o GitHub é a fonte principal**):
 Para atualizar um card, basta editar a **descrição** e os **topics** no próprio
 repositório e rodar `npm run sync:github`.
 
+**Screenshots** das demos são gerados por `npm run shots` (Playwright) em
+`public/projects/<slug>/` e detectados automaticamente pelo sync — sem edição manual.
+
 ---
 
 ## 🚀 Como rodar
@@ -114,6 +117,7 @@ npm run start
 | `npm run lint` | Linter (ESLint) |
 | `npm run format` | Formata o código (Prettier) |
 | `npm run sync:github` | Sincroniza os projetos com a API do GitHub |
+| `npm run shots` | Captura screenshots das demos (requer Playwright) |
 
 ---
 
@@ -128,4 +132,5 @@ npm run start
 
 ## 📄 Licença
 
-Projeto de uso pessoal. Sinta-se à vontade para se inspirar na estrutura.
+Distribuído sob a licença [MIT](LICENSE). Sinta-se à vontade para se inspirar
+na estrutura.
