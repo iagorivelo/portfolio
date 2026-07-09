@@ -1,0 +1,217 @@
+[
+  {
+    "name": "tech-store",
+    "title": "Tech Store",
+    "description": "⚡ Loja de tecnologia com Next.js 16 e React 19: Server Components, catálogo com scroll infinito via Server Actions, carrinho e tema escuro.",
+    "longDescription": "Loja de tecnologia construída sobre o App Router do Next.js, explorando React Server Components para renderizar no servidor e Server Actions para mutações sem rotas de API dedicadas. O catálogo carrega sob demanda com scroll infinito, o carrinho persiste entre sessões e o tema escuro é nativo.",
+    "highlights": [
+      "Catálogo com scroll infinito alimentado por Server Actions",
+      "Carrinho persistente entre sessões",
+      "React Server Components para payload mínimo no cliente",
+      "Tema escuro nativo e layout responsivo"
+    ],
+    "screenshots": [],
+    "language": "JavaScript",
+    "stack": [
+      "Next.js",
+      "React",
+      "JavaScript",
+      "Server Components",
+      "Server Actions"
+    ],
+    "type": "app",
+    "repo": "https://github.com/iagorivelo/tech-store",
+    "stars": 0,
+    "featured": true,
+    "demo": "https://tech-store-sigma-umber.vercel.app",
+    "pushedAt": "2026-07-07T20:13:02Z"
+  },
+  {
+    "name": "automatic-blog",
+    "title": "Automatic Blog",
+    "description": "Blog automatizado que gera conteúdo com IA (Google Gemini) e persiste no Supabase, com roteamento dinâmico e deploy contínuo na Vercel.",
+    "longDescription": "Plataforma de blog com geração de conteúdo automatizada, roteamento dinâmico por slug e publicação contínua na edge da Vercel. Pensada para produzir e servir artigos com o mínimo de intervenção manual.",
+    "highlights": [
+      "Geração de conteúdo automatizada",
+      "Roteamento dinâmico por slug",
+      "Deploy contínuo na edge da Vercel",
+      "TypeScript de ponta a ponta"
+    ],
+    "screenshots": [],
+    "language": "TypeScript",
+    "stack": [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Supabase",
+      "Google Gemini",
+      "RSS",
+      "JWT"
+    ],
+    "type": "app",
+    "repo": "https://github.com/iagorivelo/automatic-blog",
+    "stars": 0,
+    "featured": true,
+    "demo": "https://automatic-blog-phi.vercel.app",
+    "pushedAt": "2026-07-07T18:47:02Z"
+  },
+  {
+    "name": "valorant_data",
+    "title": "Valorant Data",
+    "description": "Catálogo interativo que consome a API pública do Valorant — mapas, armas, agentes e coleções com imagens, vídeos e descrições oficiais.",
+    "longDescription": "Catálogo interativo que consome a API pública do Valorant e organiza mapas, armas, agentes e coleções em uma interface rica, com imagens, vídeos e descrições oficiais do jogo.",
+    "highlights": [
+      "Consumo da API pública oficial do Valorant",
+      "Navegação por mapas, armas, agentes e coleções",
+      "Mídia rica com imagens e vídeos",
+      "Tipagem estática com TypeScript"
+    ],
+    "screenshots": [],
+    "language": "TypeScript",
+    "stack": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "REST API"
+    ],
+    "type": "app",
+    "repo": "https://github.com/iagorivelo/valorant_data",
+    "stars": 0,
+    "featured": true,
+    "demo": "https://valorant-data-ten.vercel.app",
+    "pushedAt": "2026-06-23T18:58:49Z"
+  },
+  {
+    "name": "search-repos",
+    "title": "Search Repos",
+    "description": "Buscador de repositórios do GitHub em tempo real, com listagem paginada, tratamento de erros e UI responsiva em Next.js.",
+    "longDescription": "Ferramenta que busca repositórios do GitHub em tempo real conforme você digita, com listagem paginada, estados de carregamento e erro tratados e interface totalmente responsiva.",
+    "highlights": [
+      "Busca em tempo real na API do GitHub",
+      "Listagem paginada",
+      "Tratamento explícito de carregamento e erros",
+      "UI responsiva"
+    ],
+    "screenshots": [],
+    "language": "TypeScript",
+    "stack": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Radix UI",
+      "GitHub API"
+    ],
+    "type": "tool",
+    "repo": "https://github.com/iagorivelo/search-repos",
+    "stars": 0,
+    "demo": "https://search-repos-xi.vercel.app",
+    "pushedAt": "2026-06-29T14:45:21Z"
+  },
+  {
+    "name": "busca-cep",
+    "title": "Busca CEP",
+    "description": "Consulta de endereços via CEP integrada à ViaCEP com validação, feedback de erro e histórico local.",
+    "longDescription": "Consulta de endereços a partir do CEP integrada à API ViaCEP, com validação de entrada, feedback claro de erro e histórico local das últimas buscas.",
+    "highlights": [
+      "Integração com a API ViaCEP",
+      "Validação de CEP e feedback de erro",
+      "Histórico local das buscas",
+      "Interface enxuta e responsiva"
+    ],
+    "screenshots": [],
+    "language": "TypeScript",
+    "stack": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "ViaCEP"
+    ],
+    "type": "tool",
+    "repo": "https://github.com/iagorivelo/busca-cep",
+    "stars": 1,
+    "demo": "https://busca-por-cep.vercel.app/",
+    "archived": true,
+    "pushedAt": "2023-11-26T15:57:15Z"
+  },
+  {
+    "name": "chat-php",
+    "title": "Chat PHP",
+    "description": "Chat em tempo real em PHP puro, com mensagens persistidas em SQLite3, autenticação JWT e ambiente Docker + Nginx.",
+    "longDescription": "Chat em tempo real escrito em PHP puro, com persistência de mensagens em SQLite3 e atualização via AJAX. Autenticação por tokens JWT, testes com PHPUnit e ambiente containerizado com Docker e Nginx. Um estudo enxuto de fundamentos de I/O e arquitetura sem frameworks.",
+    "highlights": [
+      "Mensagens em tempo real via AJAX",
+      "Autenticação com tokens JWT",
+      "Persistência em SQLite3, PHP puro sem frameworks",
+      "Ambiente Docker + Nginx e testes com PHPUnit"
+    ],
+    "screenshots": [],
+    "language": "PHP",
+    "stack": [
+      "PHP",
+      "SQLite3",
+      "JWT",
+      "Docker",
+      "Nginx",
+      "PHPUnit",
+      "AJAX"
+    ],
+    "type": "app",
+    "repo": "https://github.com/iagorivelo/chat-php",
+    "stars": 4,
+    "pushedAt": "2026-03-27T14:00:59Z"
+  },
+  {
+    "name": "file-import-system",
+    "title": "File Import System",
+    "description": "Sistema de importação de arquivos em Laravel e Filament com controle de acesso por papéis (RBAC), filas em Redis e arquitetura orientada a domínio.",
+    "longDescription": "Sistema administrativo de importação de arquivos construído em Laravel com painéis em Filament, seguindo arquitetura orientada a domínio (DDD). Controle de acesso baseado em papéis (RBAC): administradores gerenciam usuários e programas, enquanto cada usuário importa apenas dentro do escopo que lhe foi permitido.",
+    "highlights": [
+      "Laravel 13 com painéis administrativos em Filament",
+      "Controle de acesso por papéis (RBAC)",
+      "Arquitetura orientada a domínio (DDD) com PSR-4",
+      "MySQL e Redis orquestrados via Docker, testes com Pest"
+    ],
+    "screenshots": [],
+    "language": "PHP",
+    "stack": [
+      "Laravel",
+      "PHP",
+      "Filament",
+      "MySQL",
+      "Redis",
+      "Docker",
+      "Nginx",
+      "Pest"
+    ],
+    "type": "app",
+    "repo": "https://github.com/iagorivelo/file-import-system",
+    "stars": 0,
+    "pushedAt": "2026-06-29T13:50:07Z"
+  },
+  {
+    "name": "sql-builder",
+    "title": "SQL Builder",
+    "description": "Biblioteca PHP para compor SQL de forma fluente sobre PDO, com prepared statements e validação de identificadores.",
+    "longDescription": "Biblioteca em PHP para compor SQL de forma fluente e legível, priorizando reuso e clareza na montagem de queries por meio de uma API encadeável. Construída sobre PDO com prepared statements e validação de identificadores, mirando MySQL.",
+    "highlights": [
+      "API fluente e encadeável",
+      "Camada sobre PDO com prepared statements",
+      "Validação de identificadores para segurança",
+      "PHP puro, orientada a objetos, sem dependências externas"
+    ],
+    "screenshots": [],
+    "language": "PHP",
+    "stack": [
+      "PHP",
+      "PDO",
+      "MySQL"
+    ],
+    "type": "biblioteca",
+    "repo": "https://github.com/iagorivelo/sql-builder",
+    "stars": 0,
+    "pushedAt": "2026-06-29T15:27:47Z"
+  }
+]
