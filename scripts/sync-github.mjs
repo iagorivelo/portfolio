@@ -12,7 +12,7 @@
 // repos). Um Personal Access Token "classic" sem escopos (ou fine-grained só de
 // leitura) já basta para repositórios públicos.
 
-import { readFileSync, writeFileSync, existsSync } from "node:fs";
+import { readFileSync, writeFileSync, existsSync, readdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, resolve } from "node:path";
 import { execFileSync } from "node:child_process";
@@ -207,6 +207,17 @@ function normalizeTopics(topics) {
     .map((x) => x.label);
 }
 
+// Detecta screenshots em public/projects/<slug>/ (geradas por `npm run shots`
+// ou adicionadas à mão). Retorna caminhos públicos ordenados.
+function scanScreenshots(name) {
+  const dir = resolve(ROOT, "public/projects", name);
+  if (!existsSync(dir)) return [];
+  return readdirSync(dir)
+    .filter((f) => /\.(png|jpe?g|webp|avif)$/i.test(f))
+    .sort()
+    .map((f) => `/projects/${name}/${f}`);
+}
+
 function parseRepo(url) {
   if (!url) return null;
   const m = url.match(/github\.com\/([^/]+)\/([^/#?]+)/);
@@ -265,7 +276,10 @@ function mergeProject(curated, gh, previous) {
     description: nonEmpty(gh?.description) ?? curated.description ?? curated.title,
     ...(curated.longDescription ? { longDescription: curated.longDescription } : {}),
     ...(curated.highlights ? { highlights: curated.highlights } : {}),
-    screenshots: curated.screenshots ?? [],
+    screenshots:
+      curated.screenshots && curated.screenshots.length
+        ? curated.screenshots
+        : scanScreenshots(curated.name),
     language,
     stack,
     type: curated.type,

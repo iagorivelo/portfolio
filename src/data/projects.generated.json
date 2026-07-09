@@ -10,7 +10,9 @@
       "React Server Components para payload mínimo no cliente",
       "Tema escuro nativo e layout responsivo"
     ],
-    "screenshots": [],
+    "screenshots": [
+      "/projects/tech-store/01.png"
+    ],
     "language": "JavaScript",
     "stack": [
       "Next.js",
@@ -37,7 +39,9 @@
       "Deploy contínuo na edge da Vercel",
       "TypeScript de ponta a ponta"
     ],
-    "screenshots": [],
+    "screenshots": [
+      "/projects/automatic-blog/01.png"
+    ],
     "language": "TypeScript",
     "stack": [
       "Next.js",
@@ -66,7 +70,9 @@
       "Mídia rica com imagens e vídeos",
       "Tipagem estática com TypeScript"
     ],
-    "screenshots": [],
+    "screenshots": [
+      "/projects/valorant_data/01.png"
+    ],
     "language": "TypeScript",
     "stack": [
       "Next.js",
@@ -93,7 +99,9 @@
       "Tratamento explícito de carregamento e erros",
       "UI responsiva"
     ],
-    "screenshots": [],
+    "screenshots": [
+      "/projects/search-repos/01.png"
+    ],
     "language": "TypeScript",
     "stack": [
       "Next.js",
@@ -120,7 +128,9 @@
       "Histórico local das buscas",
       "Interface enxuta e responsiva"
     ],
-    "screenshots": [],
+    "screenshots": [
+      "/projects/busca-cep/01.png"
+    ],
     "language": "TypeScript",
     "stack": [
       "Next.js",
