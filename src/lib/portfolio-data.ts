@@ -73,26 +73,60 @@ export const skills = {
   "Ferramentas & DevOps": ["Docker", "Git", "Nginx", "Apache", "Vercel", "Pest / PHPUnit", "Linux"],
 };
 
-export const timeline = [
+export type ExperienceRole = {
+  period: string;
+  role: string;
+  /** Marca o cargo atual (exibe destaque). */
+  current?: boolean;
+  /** Entregas e responsabilidades concretas da fase. */
+  highlights: string[];
+  /** Tecnologias em foco naquele período. */
+  tech: string[];
+};
+
+export type Experience = {
+  company: string;
+  /** Período total na empresa (soma dos cargos). */
+  period: string;
+  /** Cargos do mais recente para o mais antigo — conta a progressão. */
+  roles: ExperienceRole[];
+};
+
+export const experience: Experience[] = [
   {
-    period: "jan 2025 — atual",
-    role: "Analista de Desenvolvimento de Software",
     company: "Grupo ABRAZ",
-    description:
-      "Desenvolvimento e manutenção de sistemas internos em PHP/Laminas para o setor jurídico: modelagem de regras de negócio (fluxos de fila, transições de status e apuração de honorários), integrações e automação de processos antes manuais.",
-  },
-  {
-    period: "jan 2023 — jan 2025",
-    role: "Assistente Técnico de Desenvolvimento de Software",
-    company: "Grupo ABRAZ",
-    description:
-      "Evolução e suporte dos sistemas internos: correção de bugs, novas funcionalidades e melhorias contínuas para dar sustentação à operação jurídica.",
-  },
-  {
-    period: "dez 2021 — dez 2022",
-    role: "Estagiário de Desenvolvimento",
-    company: "Grupo ABRAZ",
-    description:
-      "Primeiros passos no desenvolvimento profissional, com foco em PHP e apoio aos projetos internos da equipe.",
+    period: "dez 2021 — atual",
+    roles: [
+      {
+        period: "jan 2025 — atual",
+        role: "Analista de Desenvolvimento de Software",
+        current: true,
+        highlights: [
+          "Modelagem de regras de negócio dos setores jurídico e de cobrança: fluxos de fila, transições de status e apuração de honorários.",
+          "Automação de processos antes manuais, reduzindo trabalho operacional da equipe.",
+          "Integrações e módulos sob medida em sistemas PHP com Laminas e Laravel.",
+        ],
+        tech: ["PHP", "Laminas", "Laravel", "MySQL", "Docker"],
+      },
+      {
+        period: "jan 2023 — jan 2025",
+        role: "Assistente Técnico de Desenvolvimento de Software",
+        highlights: [
+          "Evolução e manutenção dos sistemas internos que sustentam a operação jurídica.",
+          "Desenvolvimento de novas funcionalidades e correção de bugs em produção.",
+          "Primeiras integrações e módulos sob medida para a operação.",
+        ],
+        tech: ["PHP", "Laminas", "MySQL", "Git"],
+      },
+      {
+        period: "dez 2021 — dez 2022",
+        role: "Estagiário de Desenvolvimento",
+        highlights: [
+          "Primeiros passos no desenvolvimento profissional, apoiando os projetos internos da equipe.",
+          "Correções e pequenas features sob orientação, consolidando fundamentos de PHP e SQL.",
+        ],
+        tech: ["PHP", "MySQL", "Git"],
+      },
+    ],
   },
 ];
