@@ -8,7 +8,6 @@ import { Archive, ArrowLeft, ArrowRight, ArrowUpRight, Check, Github, Star } fro
 import { SiteNav, SiteFooter } from "@/components/site-nav";
 import { JsonLd } from "@/components/json-ld";
 import { getProjectBySlug, projects, type Project } from "@/lib/portfolio-data";
-import { ogImage } from "@/lib/site";
 import { breadcrumbSchema, projectSchema, webPageSchema } from "@/lib/structured-data";
 
 type PageProps = { params: Promise<{ slug: string }> };
@@ -37,12 +36,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description,
       type: "article",
       url: path,
-      images: [ogImage],
     },
     twitter: {
       card: "summary_large_image",
       title: `${project.title} — Iago Rivelo`,
-      images: [ogImage],
     },
   };
 }

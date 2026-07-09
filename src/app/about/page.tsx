@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { SiteNav, SiteFooter } from "@/components/site-nav";
 import { JsonLd } from "@/components/json-ld";
 import { profile, experience, skills } from "@/lib/portfolio-data";
-import { ogImage } from "@/lib/site";
 import { webPageSchema } from "@/lib/structured-data";
 
 const description =
@@ -17,12 +16,10 @@ export const metadata: Metadata = {
     description: "Trajetória, experiência e stack de Iago Rivelo, Software Developer.",
     type: "profile",
     url: "/about",
-    images: [ogImage],
   },
   twitter: {
     card: "summary_large_image",
     title: "Sobre — Iago Rivelo",
-    images: [ogImage],
   },
 };
 

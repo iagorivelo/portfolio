@@ -3,7 +3,6 @@ import { Suspense } from "react";
 
 import { SiteNav, SiteFooter } from "@/components/site-nav";
 import { JsonLd } from "@/components/json-ld";
-import { ogImage } from "@/lib/site";
 import { projectsItemListSchema, webPageSchema } from "@/lib/structured-data";
 import { ProjectsClient } from "./projects-client";
 import { ProjectsSkeleton } from "./projects-skeleton";
@@ -21,12 +20,10 @@ export const metadata: Metadata = {
       "Repositórios e demos ao vivo dos projetos open-source de Iago Rivelo, com filtros por stack e tipo.",
     type: "website",
     url: "/projects",
-    images: [ogImage],
   },
   twitter: {
     card: "summary_large_image",
     title: "Projetos — Iago Rivelo",
-    images: [ogImage],
   },
 };
 

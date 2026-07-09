@@ -6,14 +6,3 @@
  * para localhost.
  */
 export const siteUrl = process.env.SITE_URL ?? "http://localhost:3000";
-
-/**
- * Imagem Open Graph compartilhada. O merge de metadata do Next é raso, então
- * cada página que define `openGraph` precisa reincluir a imagem — reusamos daqui.
- */
-export const ogImage = {
-  url: "/og-image.jpg",
-  width: 1200,
-  height: 640,
-  alt: "Iago Rivelo — Software Developer",
-};
