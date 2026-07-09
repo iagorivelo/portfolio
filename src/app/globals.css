@@ -38,6 +38,43 @@
 :root {
   --radius: 0.5rem;
 
+  /* Tema claro (padrão) */
+  --background: oklch(0.985 0.003 240);
+  --foreground: oklch(0.21 0.02 250);
+
+  --surface: oklch(0.965 0.004 240);
+  --surface-elevated: oklch(0.93 0.006 240);
+
+  --card: oklch(0.98 0.004 240);
+  --card-foreground: oklch(0.21 0.02 250);
+  --popover: oklch(0.98 0.004 240);
+  --popover-foreground: oklch(0.21 0.02 250);
+
+  --primary: oklch(0.72 0.16 130);
+  --primary-foreground: oklch(0.16 0.02 250);
+  --accent-lime: oklch(0.53 0.14 142);
+
+  --secondary: oklch(0.92 0.006 240);
+  --secondary-foreground: oklch(0.21 0.02 250);
+
+  --muted: oklch(0.95 0.005 240);
+  --muted-foreground: oklch(0.48 0.02 250);
+
+  --accent: oklch(0.9 0.01 240);
+  --accent-foreground: oklch(0.21 0.02 250);
+
+  --destructive: oklch(0.58 0.22 25);
+  --destructive-foreground: oklch(0.98 0 0);
+
+  --border: oklch(0.21 0.02 250 / 12%);
+  --input: oklch(0.87 0.01 240);
+  --ring: oklch(0.53 0.14 142);
+
+  --grid-line: oklch(0 0 0 / 0.04);
+}
+
+.dark {
+  /* Tema escuro */
   --background: oklch(0.14 0.01 240);
   --foreground: oklch(0.96 0.005 240);
 
@@ -68,11 +105,8 @@
   --border: oklch(0.28 0.014 240 / 60%);
   --input: oklch(0.28 0.014 240);
   --ring: oklch(0.88 0.17 128);
-}
 
-.dark {
-  --background: oklch(0.14 0.01 240);
-  --foreground: oklch(0.96 0.005 240);
+  --grid-line: oklch(1 0 0 / 0.03);
 }
 
 @layer base {
@@ -91,9 +125,15 @@
     font-feature-settings: "ss01", "cv11";
     -webkit-font-smoothing: antialiased;
     background-image:
+      radial-gradient(ellipse 80% 50% at 50% -10%, oklch(0.72 0.16 130 / 0.1), transparent),
+      radial-gradient(ellipse 60% 40% at 80% 100%, oklch(0.6 0.2 280 / 0.05), transparent);
+    background-attachment: fixed;
+  }
+
+  .dark body {
+    background-image:
       radial-gradient(ellipse 80% 50% at 50% -10%, oklch(0.88 0.17 128 / 0.08), transparent),
       radial-gradient(ellipse 60% 40% at 80% 100%, oklch(0.6 0.2 280 / 0.06), transparent);
-    background-attachment: fixed;
   }
 
   ::selection {
@@ -116,7 +156,7 @@
 
 @utility grid-noise {
   background-image:
-    linear-gradient(to right, oklch(1 0 0 / 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, oklch(1 0 0 / 0.03) 1px, transparent 1px);
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
   background-size: 48px 48px;
 }

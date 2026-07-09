@@ -3,7 +3,7 @@ import { Inter, Instrument_Serif, JetBrains_Mono } from "next/font/google";
 
 import "./globals.css";
 import { JsonLd } from "@/components/json-ld";
-import { ogImage, siteUrl } from "@/lib/site";
+import { siteUrl } from "@/lib/site";
 import { siteGraph } from "@/lib/structured-data";
 
 const inter = Inter({
@@ -46,11 +46,9 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     url: siteUrl,
     siteName: "Iago Rivelo — Portfólio",
-    images: [ogImage],
   },
   twitter: {
     card: "summary_large_image",
-    images: [ogImage],
   },
 };
 
@@ -59,13 +57,17 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
+const themeScript = `(function(){try{var t=localStorage.getItem('theme');var d=t?t==='dark':window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.classList.toggle('dark',d);}catch(e){document.documentElement.classList.add('dark');}})();`;
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang="pt-BR"
+      suppressHydrationWarning
       className={`${inter.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable}`}
     >
       <body>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <JsonLd data={siteGraph} />
         {children}
       </body>

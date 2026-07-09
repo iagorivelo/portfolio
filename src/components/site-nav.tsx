@@ -6,6 +6,7 @@ import { useState } from "react";
 import { Github, Menu, X } from "lucide-react";
 import { profile } from "@/lib/portfolio-data";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const links = [
   { to: "/", label: "Início" },
@@ -56,6 +57,7 @@ export function SiteNav() {
         </ul>
 
         <div className="flex items-center gap-2">
+          <ThemeToggle />
           <a
             href={profile.github}
             target="_blank"
