@@ -10,26 +10,32 @@ projetos **sincronizada automaticamente com a API do GitHub**.
 ## ✨ Destaques
 
 - **Renderização estática (SSG)** — páginas pré-renderizadas para carregamento rápido.
-- **SEO completo** — metadata dinâmica, Open Graph, `sitemap.xml`, `robots.txt` e
-  dados estruturados (JSON-LD) de `Person`, `WebSite` e `SoftwareSourceCode`.
+- **SEO completo** — metadata dinâmica, Open Graph, `sitemap.xml` (com `lastModified` real
+  vindo do último push de cada repositório), `robots.txt` e dados estruturados (JSON-LD) de
+  `Person`, `WebSite`, `ProfilePage`, `SoftwareSourceCode`, `ItemList` e `BreadcrumbList`.
+- **Segurança** — `Content-Security-Policy`, HSTS, `X-Frame-Options`, `nosniff` e
+  `Permissions-Policy` aplicados a todas as rotas.
+- **Acessibilidade** — landmarks semânticos, skip-link, navegação por teclado
+  (Escape fecha o menu mobile) e suporte a `prefers-reduced-motion`.
 - **Projetos automatizados** — descrições, stack (via _topics_), estrelas e status
   de arquivamento são capturados direto dos repositórios do GitHub. Veja
   [Automação de projetos](#-automação-de-projetos).
-- **Filtro por stack** na listagem de projetos e **página de detalhe** por projeto.
-- **Tema escuro nativo** e layout totalmente responsivo.
+- **Filtro por stack** na listagem de projetos (estado na URL, sem round-trip ao servidor)
+  e **página de detalhe** por projeto.
+- **Tema claro/escuro sem flash** (preferência persistida) e layout totalmente responsivo.
 
 ---
 
 ## 🧱 Stack
 
-| Camada | Tecnologias |
-| --- | --- |
-| **Framework** | Next.js 16 (App Router, React Server Components) |
-| **UI** | React 19, Tailwind CSS v4, shadcn/ui (estilo _new-york_), lucide-react |
-| **Linguagem** | TypeScript |
-| **Utilitários** | clsx, tailwind-merge |
-| **Qualidade** | ESLint, Prettier |
-| **Automação** | Node.js (script de sync) + GitHub CLI / API |
+| Camada          | Tecnologias                                                     |
+| --------------- | --------------------------------------------------------------- |
+| **Framework**   | Next.js 16 (App Router, React Server Components)                |
+| **UI**          | React 19, Tailwind CSS v4 (design system próprio), lucide-react |
+| **Linguagem**   | TypeScript                                                      |
+| **Utilitários** | clsx, tailwind-merge                                            |
+| **Qualidade**   | ESLint, Prettier                                                |
+| **Automação**   | Node.js (script de sync) + GitHub CLI / API                     |
 
 ---
 
@@ -68,12 +74,12 @@ projects.curated.mjs  ──►  npm run sync:github  ──►  projects.genera
 
 Precedência aplicada pelo sync (**o GitHub é a fonte principal**):
 
-| Campo | Origem |
-| --- | --- |
-| `description` | descrição do repositório → curada (fallback) → título |
-| `stack` | _topics_ do repositório (normalizadas e ordenadas) → curada → linguagem |
-| `stars`, `archived`, `pushedAt` | sempre da API do GitHub |
-| `longDescription`, `highlights` | curados (sem equivalente no GitHub) |
+| Campo                           | Origem                                                                  |
+| ------------------------------- | ----------------------------------------------------------------------- |
+| `description`                   | descrição do repositório → curada (fallback) → título                   |
+| `stack`                         | _topics_ do repositório (normalizadas e ordenadas) → curada → linguagem |
+| `stars`, `archived`, `pushedAt` | sempre da API do GitHub                                                 |
+| `longDescription`, `highlights` | curados (sem equivalente no GitHub)                                     |
 
 Para atualizar um card, basta editar a **descrição** e os **topics** no próprio
 repositório e rodar `npm run sync:github`.
@@ -109,24 +115,24 @@ npm run start
 
 ## 📜 Scripts
 
-| Script | Descrição |
-| --- | --- |
-| `npm run dev` | Servidor de desenvolvimento |
-| `npm run build` | Build de produção |
-| `npm run start` | Serve o build de produção |
-| `npm run lint` | Linter (ESLint) |
-| `npm run format` | Formata o código (Prettier) |
-| `npm run sync:github` | Sincroniza os projetos com a API do GitHub |
-| `npm run shots` | Captura screenshots das demos (requer Playwright) |
+| Script                | Descrição                                         |
+| --------------------- | ------------------------------------------------- |
+| `npm run dev`         | Servidor de desenvolvimento                       |
+| `npm run build`       | Build de produção                                 |
+| `npm run start`       | Serve o build de produção                         |
+| `npm run lint`        | Linter (ESLint)                                   |
+| `npm run format`      | Formata o código (Prettier)                       |
+| `npm run sync:github` | Sincroniza os projetos com a API do GitHub        |
+| `npm run shots`       | Captura screenshots das demos (requer Playwright) |
 
 ---
 
 ## ⚙️ Variáveis de ambiente
 
-| Variável | Obrigatória | Descrição |
-| --- | --- | --- |
-| `SITE_URL` | Recomendada | URL do site em produção (metadata, sitemap, canonical). Server-only. |
-| `GITHUB_TOKEN` | Opcional | Eleva o limite da API de 60 → 5000 req/h no sync. Sem ela, o script tenta `gh auth token` e, por fim, roda anônimo. |
+| Variável       | Obrigatória | Descrição                                                                                                           |
+| -------------- | ----------- | ------------------------------------------------------------------------------------------------------------------- |
+| `SITE_URL`     | Recomendada | URL do site em produção (metadata, sitemap, canonical). Server-only.                                                |
+| `GITHUB_TOKEN` | Opcional    | Eleva o limite da API de 60 → 5000 req/h no sync. Sem ela, o script tenta `gh auth token` e, por fim, roda anônimo. |
 
 ---
 
