@@ -47,6 +47,8 @@ export type Project = {
 export type CaptureShot = {
   /** Rota relativa a capturar (ex.: "/produto/x"). Vazio = raiz da demo. */
   path?: string;
+  /** Se definido, clica neste seletor CSS antes de capturar (ex.: abrir um modal). */
+  click?: string;
   /** Se definido, digita este texto no primeiro input e submete (Enter). */
   fill?: string;
   /** Aciona o submit após o `fill`. */

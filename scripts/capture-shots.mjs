@@ -44,6 +44,11 @@ async function captureConfigured(context, project, dir) {
       });
       await page.waitForTimeout(1200);
 
+      if (shot.click) {
+        await page.locator(shot.click).first().click().catch(() => {});
+        await page.waitForTimeout(1800); // espera o modal/estado abrir
+      }
+
       if (shot.fill) {
         const input = page.locator("input").first();
         await input.fill(shot.fill);

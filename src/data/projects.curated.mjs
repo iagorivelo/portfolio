@@ -59,10 +59,7 @@ export const curatedProjects = [
     demo: "https://automatic-blog-phi.vercel.app",
     shots: [
       { label: "home" },
-      {
-        path: "/post/um-ano-de-tensao-comercial-brasil-e-eua-em-impasse-tarifario-sem-solucao",
-        label: "artigo",
-      },
+      { click: "a[href^='/post/']", label: "notícia em modal" },
     ],
     featured: true,
   },
