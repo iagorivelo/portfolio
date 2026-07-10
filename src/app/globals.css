@@ -124,16 +124,40 @@
     font-family: var(--font-sans);
     font-feature-settings: "ss01", "cv11";
     -webkit-font-smoothing: antialiased;
+  }
+
+  /* Gradientes decorativos numa camada fixa própria — `background-attachment: fixed`
+     no body força repaint a cada scroll e não funciona no iOS Safari. */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
     background-image:
       radial-gradient(ellipse 80% 50% at 50% -10%, oklch(0.72 0.16 130 / 0.1), transparent),
       radial-gradient(ellipse 60% 40% at 80% 100%, oklch(0.6 0.2 280 / 0.05), transparent);
-    background-attachment: fixed;
   }
 
-  .dark body {
+  .dark body::before {
     background-image:
       radial-gradient(ellipse 80% 50% at 50% -10%, oklch(0.88 0.17 128 / 0.08), transparent),
       radial-gradient(ellipse 60% 40% at 80% 100%, oklch(0.6 0.2 280 / 0.06), transparent);
+  }
+
+  /* Respeita usuários que pedem menos movimento no sistema operacional. */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 
   ::selection {
