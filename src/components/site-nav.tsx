@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Github, Menu, X } from "lucide-react";
 import { profile } from "@/lib/portfolio-data";
 import { cn } from "@/lib/utils";
@@ -24,8 +24,24 @@ export function SiteNav() {
   const [open, setOpen] = useState(false);
   const closeMenu = () => setOpen(false);
 
+  // Escape fecha o menu mobile (teclado tem o mesmo poder que o toque).
+  useEffect(() => {
+    if (!open) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [open]);
+
   return (
     <header className="sticky top-0 z-40 border-b border-border/40 backdrop-blur-xl bg-background/70">
+      <a
+        href="#conteudo"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-6 focus:top-20 focus:z-50 focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-primary-foreground"
+      >
+        Pular para o conteúdo
+      </a>
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         <Link href="/" className="flex items-center gap-2 group">
           <span className="text-mono text-xs text-accent-lime">{"//"}</span>

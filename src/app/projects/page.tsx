@@ -37,20 +37,22 @@ export default function ProjectsPage() {
 
       <SiteNav />
 
-      <section className="mx-auto max-w-6xl px-6 pt-20 pb-10">
-        <div className="text-mono text-xs text-accent-lime mb-4">work</div>
-        <h1 className="text-display text-5xl md:text-7xl mb-6">
-          Projetos <span className="italic">selecionados</span>.
-        </h1>
-        <p className="text-muted-foreground max-w-2xl">
-          Um recorte do que construí publicamente. Cada projeto reflete uma investigação técnica —
-          desde Server Components em Next.js até fundamentos de I/O em PHP puro.
-        </p>
-      </section>
+      <main id="conteudo">
+        <section className="mx-auto max-w-6xl px-6 pt-20 pb-10">
+          <div className="text-mono text-xs text-accent-lime mb-4">work</div>
+          <h1 className="text-display text-5xl md:text-7xl mb-6">
+            Projetos <span className="italic">selecionados</span>.
+          </h1>
+          <p className="text-muted-foreground max-w-2xl">
+            Um recorte do que construí publicamente. Cada projeto reflete uma investigação técnica —
+            desde Server Components em Next.js até fundamentos de I/O em PHP puro.
+          </p>
+        </section>
 
-      <Suspense fallback={<ProjectsSkeleton />}>
-        <ProjectsClient />
-      </Suspense>
+        <Suspense fallback={<ProjectsSkeleton />}>
+          <ProjectsClient />
+        </Suspense>
+      </main>
 
       <SiteFooter />
     </div>
