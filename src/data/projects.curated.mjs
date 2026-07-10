@@ -35,6 +35,10 @@ export const curatedProjects = [
     type: "app",
     repo: "https://github.com/iagorivelo/tech-store",
     demo: "https://tech-store-sigma-umber.vercel.app",
+    shots: [
+      { label: "catálogo" },
+      { path: "/produto/headphone-pro-max", label: "página de produto" },
+    ],
     featured: true,
   },
   {
@@ -53,6 +57,13 @@ export const curatedProjects = [
     type: "app",
     repo: "https://github.com/iagorivelo/automatic-blog",
     demo: "https://automatic-blog-phi.vercel.app",
+    shots: [
+      { label: "home" },
+      {
+        path: "/post/um-ano-de-tensao-comercial-brasil-e-eua-em-impasse-tarifario-sem-solucao",
+        label: "artigo",
+      },
+    ],
     featured: true,
   },
   {
@@ -71,6 +82,11 @@ export const curatedProjects = [
     type: "app",
     repo: "https://github.com/iagorivelo/valorant_data",
     demo: "https://valorant-data-ten.vercel.app",
+    shots: [
+      { path: "/agentes", label: "agentes" },
+      { path: "/armas", label: "armas" },
+      { path: "/mapas", label: "mapas" },
+    ],
     featured: true,
   },
   {
@@ -89,6 +105,10 @@ export const curatedProjects = [
     type: "tool",
     repo: "https://github.com/iagorivelo/search-repos",
     demo: "https://search-repos-xi.vercel.app",
+    shots: [
+      { label: "busca" },
+      { fill: "iagorivelo", submit: true, label: "resultados" },
+    ],
   },
   {
     name: "busca-cep",
@@ -108,6 +128,7 @@ export const curatedProjects = [
     type: "tool",
     repo: "https://github.com/iagorivelo/busca-cep",
     demo: "https://busca-por-cep.vercel.app/",
+    shots: [{ label: "busca por CEP" }],
   },
   {
     name: "chat-php",

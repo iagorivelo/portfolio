@@ -43,11 +43,26 @@ export type Project = {
   pushedAt?: string;
 };
 
+/** Um passo de captura de screenshot usado por `npm run shots`. */
+export type CaptureShot = {
+  /** Rota relativa a capturar (ex.: "/produto/x"). Vazio = raiz da demo. */
+  path?: string;
+  /** Se definido, digita este texto no primeiro input e submete (Enter). */
+  fill?: string;
+  /** Aciona o submit após o `fill`. */
+  submit?: boolean;
+  /** Rótulo apenas para documentação. */
+  label?: string;
+};
+
 /**
  * Formato editado à mão em `src/data/projects.curated.mjs`.
  * Os campos que o sync com o GitHub preenche não são exigidos aqui.
  */
-export type CuratedProject = Omit<Project, "stars" | "archived" | "pushedAt">;
+export type CuratedProject = Omit<Project, "stars" | "archived" | "pushedAt"> & {
+  /** Páginas/estados a capturar; se omitido, o script rola a home em seções. */
+  shots?: CaptureShot[];
+};
 
 // Fonte de dados dos projetos — GERADA por `npm run sync:github`.
 // Edite o conteúdo em `src/data/projects.curated.mjs`, não aqui.
