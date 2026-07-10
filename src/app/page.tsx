@@ -88,7 +88,7 @@ export default function Home() {
         <section className="border-y border-border/40 bg-surface/40">
           <div className="mx-auto max-w-6xl px-6 py-6 flex flex-wrap items-center gap-x-8 gap-y-3 text-mono text-xs text-muted-foreground">
             <span className="text-accent-lime">stack ~</span>
-            {["TypeScript", "React", "Next.js", "Node.js", "PHP", "Laminas", "Python", "SQL", "Tailwind"].map(
+            {["TypeScript", "React", "Next.js", "Node.js", "PHP", "Laminas", "MySQL", "Docker"].map(
               (s) => (
                 <span key={s} className="hover:text-foreground transition-colors">
                   {s}
