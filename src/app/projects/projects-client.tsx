@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { Archive, ArrowRight, ArrowUpRight, Github, Search, Star, X } from "lucide-react";
 import { useMemo, useState } from "react";
 import { projects, type ProjectType } from "@/lib/portfolio-data";
@@ -16,7 +16,6 @@ const TYPES: { value: ProjectType | "all"; label: string }[] = [
 export function ProjectsClient() {
   const searchParams = useSearchParams();
   const pathname = usePathname();
-  const router = useRouter();
 
   // `type` e `stack` são derivados da URL (fonte da verdade → back/forward funciona).
   const rawType = searchParams.get("type");
@@ -43,7 +42,9 @@ export function ProjectsClient() {
       else params.delete("stack");
     }
     const qs = params.toString();
-    router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false });
+    // replaceState raso (sem round-trip RSC): a filtragem é 100% client-side e o
+    // useSearchParams acompanha a History API nativamente no App Router.
+    window.history.replaceState(null, "", qs ? `${pathname}?${qs}` : pathname);
   };
 
   const handleQuery = (value: string) => {
@@ -60,7 +61,7 @@ export function ProjectsClient() {
 
   const clearAll = () => {
     setQuery("");
-    router.replace(pathname, { scroll: false });
+    window.history.replaceState(null, "", pathname);
   };
 
   const allStacks = useMemo(() => {
@@ -159,7 +160,8 @@ export function ProjectsClient() {
 
           <div className="flex items-center justify-between pt-1 text-mono text-xs text-muted-foreground">
             <span>
-              <span className="text-accent-lime">{filtered.length}</span> de {projects.length} projeto
+              <span className="text-accent-lime">{filtered.length}</span> de {projects.length}{" "}
+              projeto
               {projects.length === 1 ? "" : "s"}
             </span>
             {hasFilters && (
