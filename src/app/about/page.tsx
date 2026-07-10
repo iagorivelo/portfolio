@@ -49,30 +49,34 @@ export default function About() {
           <div className="space-y-5 text-[15px] leading-relaxed text-foreground/90">
             <p>
               Olá! Sou <span className="text-accent-lime">Iago Rivelo</span>, Analista de
-              Desenvolvimento de Software baseado em {profile.location}. Comecei como estagiário em{" "}
-              {profile.since} e, desde então, venho evoluindo em direção a soluções cada vez mais
-              robustas — hoje unindo código sólido a processos que resolvem problemas reais de
-              negócio.
+              Desenvolvimento de Software baseado em {profile.location}. Minha jornada na tecnologia
+              começou em {profile.since} e, desde então, venho evoluindo com um foco claro: unir
+              código sólido a processos que resolvem problemas reais de negócio.
             </p>
             <p>
-              Atualmente atuo no <span className="text-foreground">{profile.company}</span>, onde
-              desenvolvo e mantenho sistemas internos em PHP (Laminas e Laravel) para os setores
-              jurídico e de cobrança — da modelagem de regras de negócio (fluxos de fila, transições
-              de status e apuração de honorários) à automação de processos antes manuais, passando
-              por integrações e módulos sob medida para a operação.
+              Atualmente, faço parte do time do{" "}
+              <span className="text-foreground">{profile.company}</span>, onde desenvolvo e mantenho
+              sistemas internos críticos em PHP (Laminas e Laravel) para os setores jurídico e de
+              cobrança. Meu dia a dia vai muito além da tela do editor; atuo diretamente na modelagem
+              de regras de negócio — como fluxos de fila, transições de status e apuração de
+              honorários — e na automação de processos antes manuais, criando integrações e módulos
+              sob medida que dão tração à operação da empresa.
             </p>
             <p>
-              Nos projetos pessoais e open-source, exploro diferentes camadas do desenvolvimento:
-              back-ends em PHP com persistência em SQLite e MySQL — incluindo um query builder
-              próprio — e aplicações web no ecossistema JavaScript moderno, com React 19, Next.js
-              (Server Components e Server Actions) e TypeScript rigoroso sobre APIs REST bem
+              Sou movido pela exploração técnica. Nos meus projetos pessoais e iniciativas
+              open-source, transito entre diferentes camadas do desenvolvimento. No back-end,
+              aprofundo meus conhecimentos em arquitetura e bancos de dados (SQLite e MySQL), chegando
+              a desenvolver meu próprio query builder em PHP. No ecossistema JavaScript, construo
+              aplicações modernas apoiadas nos recursos mais atuais do React 19, Next.js (Server
+              Components e Server Actions) e TypeScript rigoroso, sempre consumindo APIs REST bem
               desenhadas.
             </p>
             <p>
-              Gosto de trabalhar próximo do produto: entender o problema antes de escrever a primeira
-              linha e entregar soluções que envelhecem bem. Fora do editor, estou sempre estudando
-              fundamentos — do banco de dados ao design de interface — porque acredito que engenharia
-              boa nasce dessa base.
+              Mais do que dominar frameworks, gosto de trabalhar próximo ao produto. Acredito que
+              entender o problema a fundo antes de escrever a primeira linha de código é o segredo
+              para entregar soluções que envelhecem bem. Fora do expediente, sou um estudante
+              contínuo dos fundamentos — da modelagem de dados ao design de interface — porque tenho a
+              convicção de que a boa engenharia nasce de uma base inabalável.
             </p>
           </div>
         </div>
