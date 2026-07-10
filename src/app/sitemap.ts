@@ -16,12 +16,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const projectRoutes = projects.map((project) => ({
     path: `/projects/${project.name}`,
     priority: 0.6,
+    // Data real do último push do repositório (preenchida pelo sync), quando existir.
+    lastModified: project.pushedAt ? new Date(project.pushedAt) : lastModified,
   }));
 
-  return [...staticRoutes, ...projectRoutes].map(({ path, priority }) => ({
-    url: `${siteUrl}${path}`,
-    lastModified,
-    changeFrequency: "monthly" as const,
-    priority,
-  }));
+  return [...staticRoutes.map((route) => ({ ...route, lastModified })), ...projectRoutes].map(
+    ({ path, priority, lastModified: modified }) => ({
+      url: `${siteUrl}${path}`,
+      lastModified: modified,
+      changeFrequency: "monthly" as const,
+      priority,
+    }),
+  );
 }

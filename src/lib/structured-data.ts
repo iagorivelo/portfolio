@@ -12,7 +12,7 @@ export const personSchema = {
   jobTitle: profile.role,
   description: profile.bio,
   url: siteUrl,
-  image: profile.avatar,
+  image: `${siteUrl}${profile.avatar}`,
   email: `mailto:${profile.email}`,
   sameAs: [profile.github, profile.linkedin],
   address: {
@@ -24,7 +24,19 @@ export const personSchema = {
     "@type": "Organization",
     name: profile.company,
   },
-  knowsAbout: ["PHP", "JavaScript", "TypeScript", "React", "Next.js", "Node.js", "Python", "SQL"],
+  knowsAbout: [
+    "PHP",
+    "Laminas",
+    "Laravel",
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "Next.js",
+    "Node.js",
+    "MySQL",
+    "SQLite",
+    "Docker",
+  ],
 };
 
 export const websiteSchema = {
@@ -61,6 +73,21 @@ export function webPageSchema({
     inLanguage: "pt-BR",
     isPartOf: { "@id": websiteId },
     about: { "@id": personId },
+  };
+}
+
+// Página de perfil (/about) — o mainEntity é a própria Person do grafo sitewide.
+export function profilePageSchema({ description }: { description: string }) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "@id": `${siteUrl}/about#profilepage`,
+    url: `${siteUrl}/about`,
+    name: `Sobre — ${profile.name}`,
+    description,
+    inLanguage: "pt-BR",
+    isPartOf: { "@id": websiteId },
+    mainEntity: { "@id": personId },
   };
 }
 
