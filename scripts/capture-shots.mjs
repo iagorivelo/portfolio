@@ -45,8 +45,24 @@ async function captureConfigured(context, project, dir) {
       await page.waitForTimeout(1200);
 
       if (shot.click) {
-        await page.locator(shot.click).first().click().catch(() => {});
-        await page.waitForTimeout(1800); // espera o modal/estado abrir
+        // Margem de hidratação: garante navegação client-side (abre o modal
+        // via intercepting routes em vez de carregar a página cheia).
+        await page.waitForTimeout(2000);
+        const openModal = async () => {
+          await page.locator(shot.click).first().click().catch(() => {});
+          return page
+            .waitForSelector("dialog", { timeout: 6000 })
+            .then(() => true)
+            .catch(() => false);
+        };
+        let opened = await openModal();
+        if (!opened) {
+          // Clicou antes da hidratação e navegou para a página cheia: volta e repete.
+          await page.goBack().catch(() => {});
+          await page.waitForTimeout(2500);
+          opened = await openModal();
+        }
+        await page.waitForTimeout(1200);
       }
 
       if (shot.fill) {

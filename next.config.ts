@@ -18,6 +18,10 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  images: {
+    // Permite os screenshots dos projetos, com ou sem o cache-busting `?v=`.
+    localPatterns: [{ pathname: "/projects/**" }],
+  },
   async headers() {
     return [
       {

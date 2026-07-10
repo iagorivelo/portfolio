@@ -12,7 +12,7 @@
 // repos). Um Personal Access Token "classic" sem escopos (ou fine-grained só de
 // leitura) já basta para repositórios públicos.
 
-import { readFileSync, writeFileSync, existsSync, readdirSync } from "node:fs";
+import { readFileSync, writeFileSync, existsSync, readdirSync, statSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, resolve } from "node:path";
 import { execFileSync } from "node:child_process";
@@ -215,7 +215,12 @@ function scanScreenshots(name) {
   return readdirSync(dir)
     .filter((f) => /\.(png|jpe?g|webp|avif)$/i.test(f))
     .sort()
-    .map((f) => `/projects/${name}/${f}`);
+    .map((f) => {
+      // Cache-busting por mtime: a URL muda quando o print é regerado, evitando
+      // que o otimizador de imagem do Next sirva uma versão antiga.
+      const version = Math.round(statSync(resolve(dir, f)).mtimeMs);
+      return `/projects/${name}/${f}?v=${version}`;
+    });
 }
 
 function parseRepo(url) {
