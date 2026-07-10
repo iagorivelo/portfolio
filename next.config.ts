@@ -19,8 +19,8 @@ const securityHeaders = [
 const nextConfig: NextConfig = {
   poweredByHeader: false,
   images: {
-    // Permite os screenshots dos projetos, com ou sem o cache-busting `?v=`.
-    localPatterns: [{ pathname: "/projects/**" }],
+    // Permite os screenshots dos projetos (com ou sem o cache-busting `?v=`) e o avatar.
+    localPatterns: [{ pathname: "/projects/**" }, { pathname: "/avatar.jpg" }],
   },
   async headers() {
     return [
