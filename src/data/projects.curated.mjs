@@ -57,10 +57,7 @@ export const curatedProjects = [
     type: "app",
     repo: "https://github.com/iagorivelo/automatic-blog",
     demo: "https://automatic-blog-phi.vercel.app",
-    shots: [
-      { label: "home" },
-      { click: "a[href^='/post/']", label: "notícia em modal" },
-    ],
+    shots: [{ label: "home" }, { click: "a[href^='/post/']", label: "notícia em modal" }],
     featured: true,
   },
   {
@@ -102,10 +99,7 @@ export const curatedProjects = [
     type: "tool",
     repo: "https://github.com/iagorivelo/search-repos",
     demo: "https://search-repos-xi.vercel.app",
-    shots: [
-      { label: "busca" },
-      { fill: "iagorivelo", submit: true, label: "resultados" },
-    ],
+    shots: [{ label: "busca" }, { fill: "iagorivelo", submit: true, label: "resultados" }],
   },
   {
     name: "busca-cep",

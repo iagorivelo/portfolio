@@ -12,37 +12,35 @@ const LIME = "#bef264";
 
 export default function Image() {
   return new ImageResponse(
-    (
-      <div
-        style={{
-          height: "100%",
-          width: "100%",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          background: BG,
-          backgroundImage: `radial-gradient(ellipse 80% 50% at 50% -10%, rgba(190,242,100,0.14), transparent), radial-gradient(ellipse 60% 40% at 90% 110%, rgba(150,120,255,0.12), transparent)`,
-          padding: 80,
-          fontFamily: "sans-serif",
-        }}
-      >
-        <div style={{ display: "flex", alignItems: "center", color: LIME, fontSize: 30 }}>
-          {"// "}
-          {profile.name.split(" ")[0].toLowerCase()}.dev
-        </div>
-
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <div style={{ fontSize: 88, color: FG, fontWeight: 700, letterSpacing: -2 }}>
-            {profile.name}
-          </div>
-          <div style={{ fontSize: 40, color: MUTED, marginTop: 12 }}>{profile.role}</div>
-        </div>
-
-        <div style={{ display: "flex", alignItems: "center", fontSize: 26, color: LIME }}>
-          {profile.bio.replace(/^[^—]*—\s*/, "")}
-        </div>
+    <div
+      style={{
+        height: "100%",
+        width: "100%",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+        background: BG,
+        backgroundImage: `radial-gradient(ellipse 80% 50% at 50% -10%, rgba(190,242,100,0.14), transparent), radial-gradient(ellipse 60% 40% at 90% 110%, rgba(150,120,255,0.12), transparent)`,
+        padding: 80,
+        fontFamily: "sans-serif",
+      }}
+    >
+      <div style={{ display: "flex", alignItems: "center", color: LIME, fontSize: 30 }}>
+        {"// "}
+        {profile.name.split(" ")[0].toLowerCase()}.dev
       </div>
-    ),
+
+      <div style={{ display: "flex", flexDirection: "column" }}>
+        <div style={{ fontSize: 88, color: FG, fontWeight: 700, letterSpacing: -2 }}>
+          {profile.name}
+        </div>
+        <div style={{ fontSize: 40, color: MUTED, marginTop: 12 }}>{profile.role}</div>
+      </div>
+
+      <div style={{ display: "flex", alignItems: "center", fontSize: 26, color: LIME }}>
+        {profile.bio.replace(/^[^—]*—\s*/, "")}
+      </div>
+    </div>,
     { ...size },
   );
 }

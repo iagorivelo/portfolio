@@ -8,7 +8,10 @@ export function ProjectsSkeleton() {
       <section className="mx-auto max-w-6xl px-6 pb-24">
         <div className="grid gap-4">
           {[0, 1, 2, 3].map((i) => (
-            <div key={i} className="h-36 rounded-xl border border-border bg-surface animate-pulse" />
+            <div
+              key={i}
+              className="h-36 rounded-xl border border-border bg-surface animate-pulse"
+            />
           ))}
         </div>
       </section>
