@@ -141,6 +141,19 @@ export function SiteFooter() {
             github
           </a>
           <span className="opacity-40">·</span>
+          <a
+            href={profile.linkedin}
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-accent-lime transition-colors"
+          >
+            linkedin
+          </a>
+          <span className="opacity-40">·</span>
+          <a href={`mailto:${profile.email}`} className="hover:text-accent-lime transition-colors">
+            e-mail
+          </a>
+          <span className="opacity-40">·</span>
           <span>{profile.location.toLowerCase()}</span>
         </div>
       </div>

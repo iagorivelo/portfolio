@@ -13,7 +13,8 @@ export const personSchema = {
   description: profile.bio,
   url: siteUrl,
   image: profile.avatar,
-  sameAs: [profile.github],
+  email: `mailto:${profile.email}`,
+  sameAs: [profile.github, profile.linkedin],
   address: {
     "@type": "PostalAddress",
     addressLocality: "Pernambuco",

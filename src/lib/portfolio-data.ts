@@ -7,6 +7,8 @@ export const profile = {
   location: "Recife, Pernambuco",
   company: "Grupo ABRAZ",
   github: "https://github.com/iagorivelo",
+  linkedin: "https://www.linkedin.com/in/iagorivelo/",
+  email: "iago.rivelo@gmail.com",
   avatar: "https://avatars.githubusercontent.com/u/100492685?v=4",
   bio: "Analista de Desenvolvimento de Software — PHP · Laminas · TypeScript · React · Next.js",
   since: "2021",
