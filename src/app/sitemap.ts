@@ -16,7 +16,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const projectRoutes = projects.map((project) => ({
     path: `/projects/${project.name}`,
     priority: 0.6,
-    // Data real do último push do repositório (preenchida pelo sync), quando existir.
     lastModified: project.pushedAt ? new Date(project.pushedAt) : lastModified,
   }));
 

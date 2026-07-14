@@ -1,23 +1,3 @@
-// Fonte curada dos projetos — ÚNICA fonte que você edita à mão.
-//
-// O script `npm run sync:github` lê este arquivo, enriquece cada projeto com
-// dados vivos da API do GitHub (stars, demo, descrição/stack de fallback,
-// arquivado, último push) e escreve `projects.generated.json`, que é o que a
-// aplicação de fato importa. Nunca edite o .json gerado — edite aqui e rode o sync.
-//
-// Precedência aplicada pelo sync:
-//   • description → descrição do repo ?? curada ?? título   (GitHub vence)
-//   • stack       → topics do repo normalizadas ?? curada ?? [linguagem]  (GitHub vence)
-//   • language    → curada ?? linguagem do repo
-//   • demo        → curada ?? homepage do repo
-//   • stars       → sempre do GitHub (fallback: valor anterior gerado, senão 0)
-//   • longDescription/highlights → sempre curados (sem equivalente no GitHub)
-//
-// `description` e `stack` são capturados do GitHub. Só mantenha `description`
-// aqui como fallback quando o repo não puder ter uma (ex.: busca-cep, arquivado
-// e read-only). Para o texto do card, edite a descrição no próprio repositório.
-
-/** @type {import("../lib/portfolio-data").CuratedProject[]} */
 export const curatedProjects = [
   {
     name: "tech-store",

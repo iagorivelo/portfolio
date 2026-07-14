@@ -16,59 +16,46 @@ export const profile = {
 export type ProjectType = "app" | "biblioteca" | "tool";
 
 export type Project = {
-  /** Slug usado na URL (/projects/<name>). */
   name: string;
   title: string;
-  /** Resumo curto exibido nos cards. */
+
   description: string;
-  /** Descrição expandida exibida na página de detalhe. */
+
   longDescription?: string;
-  /** Pontos de destaque técnicos do projeto. */
+
   highlights?: string[];
-  /**
-   * Caminhos de screenshots (ex.: "/projects/<slug>/01.png").
-   * Deixe vazio para renderizar placeholders na página de detalhe.
-   */
+
   screenshots?: string[];
   language: string;
   stack: string[];
   type: ProjectType;
-  /** URL do repositório. Omitido em projetos privados/proprietários. */
+
   repo?: string;
   demo?: string;
   stars: number;
   featured?: boolean;
-  /** Repositório arquivado no GitHub (preenchido pelo sync). */
+
   archived?: boolean;
-  /** Data ISO do último push (preenchido pelo sync). */
+
   pushedAt?: string;
 };
 
-/** Um passo de captura de screenshot usado por `npm run shots`. */
 export type CaptureShot = {
-  /** Rota relativa a capturar (ex.: "/produto/x"). Vazio = raiz da demo. */
   path?: string;
-  /** Se definido, clica neste seletor CSS antes de capturar (ex.: abrir um modal). */
+
   click?: string;
-  /** Se definido, digita este texto no primeiro input e submete (Enter). */
+
   fill?: string;
-  /** Aciona o submit após o `fill`. */
+
   submit?: boolean;
-  /** Rótulo apenas para documentação. */
+
   label?: string;
 };
 
-/**
- * Formato editado à mão em `src/data/projects.curated.mjs`.
- * Os campos que o sync com o GitHub preenche não são exigidos aqui.
- */
 export type CuratedProject = Omit<Project, "stars" | "archived" | "pushedAt"> & {
-  /** Páginas/estados a capturar; se omitido, o script rola a home em seções. */
   shots?: CaptureShot[];
 };
 
-// Fonte de dados dos projetos — GERADA por `npm run sync:github`.
-// Edite o conteúdo em `src/data/projects.curated.mjs`, não aqui.
 export const projects = projectsData as unknown as Project[];
 
 export function getProjectBySlug(slug: string): Project | undefined {
@@ -94,29 +81,29 @@ export const skills = {
 export type ExperienceRole = {
   period: string;
   role: string;
-  /** Marca o cargo atual (exibe destaque). */
+
   current?: boolean;
-  /** Entregas e responsabilidades concretas da fase. */
+
   highlights: string[];
-  /** Tecnologias em foco naquele período. */
+
   tech: string[];
 };
 
 export type Experience = {
   company: string;
-  /** Período total na empresa (soma dos cargos). */
+
   period: string;
-  /** Cargos do mais recente para o mais antigo — conta a progressão. */
+
   roles: ExperienceRole[];
 };
 
 export const experience: Experience[] = [
   {
     company: "Grupo ABRAZ",
-    period: "dez 2021 — atual",
+    period: "dez 2021 - atual",
     roles: [
       {
-        period: "jan 2025 — atual",
+        period: "jan 2025 - atual",
         role: "Analista de Desenvolvimento de Software",
         current: true,
         highlights: [
@@ -127,7 +114,7 @@ export const experience: Experience[] = [
         tech: ["PHP", "Laminas", "Laravel", "MySQL", "Docker"],
       },
       {
-        period: "jan 2023 — jan 2025",
+        period: "jan 2023 - jan 2025",
         role: "Assistente Técnico de Desenvolvimento de Software",
         highlights: [
           "Evolução e manutenção dos sistemas internos que sustentam a operação jurídica.",
@@ -137,7 +124,7 @@ export const experience: Experience[] = [
         tech: ["PHP", "Laminas", "MySQL", "Git"],
       },
       {
-        period: "dez 2021 — dez 2022",
+        period: "dez 2021 - dez 2022",
         role: "Estagiário de Desenvolvimento",
         highlights: [
           "Primeiros passos no desenvolvimento profissional, apoiando os projetos internos da equipe.",

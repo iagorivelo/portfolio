@@ -4,7 +4,6 @@ import { siteUrl } from "@/lib/site";
 const personId = `${siteUrl}/#person`;
 const websiteId = `${siteUrl}/#website`;
 
-// Pessoa (dono do site) + Organização onde trabalha (worksFor).
 export const personSchema = {
   "@type": "Person",
   "@id": personId,
@@ -48,7 +47,6 @@ export const websiteSchema = {
   publisher: { "@id": personId },
 };
 
-// Grafo sitewide, injetado uma vez no layout raiz.
 export const siteGraph = {
   "@context": "https://schema.org",
   "@graph": [personSchema, websiteSchema],
@@ -76,7 +74,6 @@ export function webPageSchema({
   };
 }
 
-// Página de perfil (/about) — o mainEntity é a própria Person do grafo sitewide.
 export function profilePageSchema({ description }: { description: string }) {
   return {
     "@context": "https://schema.org",
@@ -91,7 +88,6 @@ export function profilePageSchema({ description }: { description: string }) {
   };
 }
 
-// Projeto individual (rich result na página de detalhe /projects/<slug>).
 export function projectSchema(project: Project) {
   return {
     "@context": "https://schema.org",
@@ -106,7 +102,6 @@ export function projectSchema(project: Project) {
   };
 }
 
-// Trilha de navegação (breadcrumb) — melhora navegação e rich results.
 export function breadcrumbSchema(items: { name: string; path: string }[]) {
   return {
     "@context": "https://schema.org",
@@ -120,7 +115,6 @@ export function breadcrumbSchema(items: { name: string; path: string }[]) {
   };
 }
 
-// Lista de projetos (rich result de ItemList na página /projects).
 export const projectsItemListSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
