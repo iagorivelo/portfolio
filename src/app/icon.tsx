@@ -1,6 +1,5 @@
 import { ImageResponse } from "next/og";
 
-// Favicon gerado em build — casa com a identidade do site (lime sobre fundo escuro).
 export const size = { width: 32, height: 32 };
 export const contentType = "image/png";
 
@@ -14,7 +13,7 @@ export default function Icon() {
         alignItems: "center",
         justifyContent: "center",
         background: "#16181c",
-        color: "#c3f53b",
+        color: "#43acfb",
         fontSize: 24,
         fontWeight: 700,
         borderRadius: 7,

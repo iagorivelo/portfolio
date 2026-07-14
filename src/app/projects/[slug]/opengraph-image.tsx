@@ -12,7 +12,7 @@ export function generateStaticParams() {
 const BG = "#0d1117";
 const FG = "#f2f4f7";
 const MUTED = "#97a1b0";
-const LIME = "#bef264";
+const NEON = "#43acfb";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -29,7 +29,7 @@ export default async function Image({ params }: Props) {
         flexDirection: "column",
         justifyContent: "space-between",
         background: BG,
-        backgroundImage: `radial-gradient(ellipse 80% 50% at 50% -10%, rgba(190,242,100,0.14), transparent), radial-gradient(ellipse 60% 40% at 90% 110%, rgba(150,120,255,0.12), transparent)`,
+        backgroundImage: `radial-gradient(ellipse 80% 50% at 50% -10%, rgba(67,172,251,0.16), transparent), radial-gradient(ellipse 60% 40% at 90% 110%, rgba(67,172,251,0.10), transparent)`,
         padding: 80,
         fontFamily: "sans-serif",
       }}
@@ -39,7 +39,7 @@ export default async function Image({ params }: Props) {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          color: LIME,
+          color: NEON,
           fontSize: 28,
         }}
       >

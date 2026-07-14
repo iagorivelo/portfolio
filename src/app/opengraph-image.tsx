@@ -8,7 +8,7 @@ export const contentType = "image/png";
 const BG = "#0d1117";
 const FG = "#f2f4f7";
 const MUTED = "#97a1b0";
-const LIME = "#bef264";
+const NEON = "#43acfb";
 
 export default function Image() {
   return new ImageResponse(
@@ -20,12 +20,12 @@ export default function Image() {
         flexDirection: "column",
         justifyContent: "space-between",
         background: BG,
-        backgroundImage: `radial-gradient(ellipse 80% 50% at 50% -10%, rgba(190,242,100,0.14), transparent), radial-gradient(ellipse 60% 40% at 90% 110%, rgba(150,120,255,0.12), transparent)`,
+        backgroundImage: `radial-gradient(ellipse 80% 50% at 50% -10%, rgba(67,172,251,0.16), transparent), radial-gradient(ellipse 60% 40% at 90% 110%, rgba(67,172,251,0.10), transparent)`,
         padding: 80,
         fontFamily: "sans-serif",
       }}
     >
-      <div style={{ display: "flex", alignItems: "center", color: LIME, fontSize: 30 }}>
+      <div style={{ display: "flex", alignItems: "center", color: NEON, fontSize: 30 }}>
         {"// "}
         {profile.name.split(" ")[0].toLowerCase()}.dev
       </div>
@@ -37,7 +37,7 @@ export default function Image() {
         <div style={{ fontSize: 40, color: MUTED, marginTop: 12 }}>{profile.role}</div>
       </div>
 
-      <div style={{ display: "flex", alignItems: "center", fontSize: 26, color: LIME }}>
+      <div style={{ display: "flex", alignItems: "center", fontSize: 26, color: NEON }}>
         {profile.bio.replace(/^[^—]*—\s*/, "")}
       </div>
     </div>,
