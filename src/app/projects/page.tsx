@@ -39,13 +39,13 @@ export default function ProjectsPage() {
 
       <main id="conteudo">
         <section className="mx-auto max-w-6xl px-6 pt-20 pb-10">
-          <div className="text-mono text-xs text-accent-lime mb-4">work</div>
-          <h1 className="text-display text-5xl md:text-7xl mb-6">
-            Projetos <span className="italic">selecionados</span>.
+          <div className="text-mono text-xs text-accent-neon mb-4">projetos</div>
+          <h1 className="text-display-lg text-5xl md:text-7xl mb-6">
+            Projetos <span className="text-accent-neon">selecionados</span>.
           </h1>
-          <p className="text-muted-foreground max-w-2xl">
-            Um recorte do que construí publicamente. Cada projeto reflete uma investigação técnica —
-            desde Server Components em Next.js até fundamentos de I/O em PHP puro.
+          <p className="text-muted-foreground max-w-2xl text-lg leading-relaxed">
+            Um recorte do que construí publicamente. Cada projeto reflete uma investigação técnica,
+            de Server Components em Next.js a fundamentos de I/O em PHP puro.
           </p>
         </section>
 

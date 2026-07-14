@@ -79,14 +79,13 @@ export default async function ProjectDetailPage({ params }: PageProps) {
 
       <main id="conteudo">
         <article className="mx-auto max-w-5xl px-6 pt-12 pb-24">
-          {/* Breadcrumb */}
           <nav
             aria-label="Trilha de navegação"
             className="text-mono text-xs text-muted-foreground mb-8"
           >
             <ol className="flex flex-wrap items-center gap-1.5">
               <li>
-                <Link href="/" className="hover:text-accent-lime transition-colors">
+                <Link href="/" className="hover:text-accent-neon transition-colors">
                   início
                 </Link>
               </li>
@@ -94,7 +93,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                 /
               </li>
               <li>
-                <Link href="/projects" className="hover:text-accent-lime transition-colors">
+                <Link href="/projects" className="hover:text-accent-neon transition-colors">
                   projetos
                 </Link>
               </li>
@@ -105,10 +104,9 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             </ol>
           </nav>
 
-          {/* Header */}
           <header className="mb-10">
             <div className="flex flex-wrap items-center gap-3 mb-5">
-              <span className="text-mono text-[11px] px-2 py-0.5 rounded-full bg-accent-lime/10 text-accent-lime border border-accent-lime/20">
+              <span className="text-mono text-[11px] px-2 py-0.5 rounded-full bg-accent-neon/10 text-accent-neon border border-accent-neon/20">
                 {project.language}
               </span>
               <span className="text-mono text-[11px] px-2 py-0.5 rounded-full bg-surface-elevated text-muted-foreground border border-border/60">
@@ -126,7 +124,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
               )}
             </div>
 
-            <h1 className="text-display text-5xl md:text-7xl mb-6">{project.title}</h1>
+            <h1 className="text-display-lg text-5xl md:text-7xl mb-6">{project.title}</h1>
             <p className="text-lg text-muted-foreground max-w-2xl leading-relaxed">
               {project.longDescription ?? project.description}
             </p>
@@ -137,7 +135,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                   href={project.repo}
                   target="_blank"
                   rel="noreferrer"
-                  className="group inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm font-medium hover:border-accent-lime hover:text-accent-lime transition-colors"
+                  className="group inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm font-medium hover:border-accent-neon hover:text-accent-neon transition-colors active:scale-[0.98]"
                 >
                   <Github className="h-4 w-4" />
                   Ver código
@@ -148,7 +146,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                   href={project.demo}
                   target="_blank"
                   rel="noreferrer"
-                  className="group inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-all hover:gap-3"
+                  className="group inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-all hover:gap-3 active:scale-[0.98]"
                 >
                   Ver demo
                   <ArrowUpRight className="h-4 w-4 transition-transform group-hover:rotate-45" />
@@ -157,24 +155,21 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             </div>
           </header>
 
-          {/* Screenshots */}
-          <section className="mb-12">
-            <div className="text-mono text-xs text-accent-lime mb-4">preview</div>
+          <section className="reveal mb-12">
             <ProjectScreenshots project={project} />
           </section>
 
           <div className="grid gap-12 md:grid-cols-[1fr_auto] md:gap-16">
-            {/* Highlights */}
             {project.highlights && project.highlights.length > 0 && (
               <section>
-                <div className="text-mono text-xs text-accent-lime mb-4">destaques</div>
+                <div className="text-mono text-xs text-accent-neon mb-4">destaques</div>
                 <ul className="space-y-3">
                   {project.highlights.map((highlight) => (
                     <li
                       key={highlight}
                       className="flex items-start gap-3 text-[15px] text-foreground/90"
                     >
-                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-accent-lime" />
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-accent-neon" />
                       <span>{highlight}</span>
                     </li>
                   ))}
@@ -182,14 +177,13 @@ export default async function ProjectDetailPage({ params }: PageProps) {
               </section>
             )}
 
-            {/* Stack */}
             <aside className="md:min-w-56">
-              <div className="text-mono text-xs text-accent-lime mb-4">stack</div>
+              <div className="text-mono text-xs text-accent-neon mb-4">stack</div>
               <div className="flex flex-wrap gap-2">
                 {project.stack.map((tech) => (
                   <span
                     key={tech}
-                    className="text-mono text-[11px] px-2.5 py-1 rounded-md bg-surface-elevated border border-border/60 text-muted-foreground cursor-default transition-all duration-200 ease-out hover:scale-110 hover:bg-accent-lime/10 hover:border-accent-lime/50 hover:text-accent-lime hover:shadow-[0_0_12px_-2px_var(--color-accent-lime)]"
+                    className="text-mono text-[11px] px-2.5 py-1 rounded-md bg-surface-elevated border border-border/60 text-muted-foreground cursor-default transition-all duration-200 ease-out hover:scale-110 hover:bg-accent-neon/10 hover:border-accent-neon/50 hover:text-accent-neon hover:shadow-[0_0_12px_-2px_var(--color-accent-neon)]"
                   >
                     {tech}
                   </span>
@@ -198,7 +192,6 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             </aside>
           </div>
 
-          {/* Prev / Next */}
           <nav
             aria-label="Navegação entre projetos"
             className="mt-16 pt-8 border-t border-border/40 grid gap-4 sm:grid-cols-2"
@@ -206,9 +199,9 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             {previous ? (
               <Link
                 href={`/projects/${previous.name}`}
-                className="group flex items-center gap-3 rounded-xl border border-border bg-surface p-5 hover:border-accent-lime/40 transition-all"
+                className="group flex items-center gap-3 rounded-xl border border-border bg-surface p-5 hover:border-accent-neon/40 transition-all"
               >
-                <ArrowLeft className="h-4 w-4 text-muted-foreground group-hover:text-accent-lime transition-colors" />
+                <ArrowLeft className="h-4 w-4 text-muted-foreground group-hover:text-accent-neon transition-colors" />
                 <span>
                   <span className="block text-mono text-[11px] text-muted-foreground">
                     anterior
@@ -222,13 +215,13 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             {next && (
               <Link
                 href={`/projects/${next.name}`}
-                className="group flex items-center justify-end gap-3 rounded-xl border border-border bg-surface p-5 text-right hover:border-accent-lime/40 transition-all sm:col-start-2"
+                className="group flex items-center justify-end gap-3 rounded-xl border border-border bg-surface p-5 text-right hover:border-accent-neon/40 transition-all sm:col-start-2"
               >
                 <span>
                   <span className="block text-mono text-[11px] text-muted-foreground">próximo</span>
                   <span className="block font-medium">{next.title}</span>
                 </span>
-                <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-accent-lime transition-colors" />
+                <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-accent-neon transition-colors" />
               </Link>
             )}
           </nav>
@@ -269,7 +262,7 @@ function ProjectScreenshots({ project }: { project: Project }) {
         <BrowserFrame key={i} url={project.demo}>
           <div className="relative aspect-video flex flex-col items-center justify-center gap-2 overflow-hidden">
             <div className="absolute inset-0 grid-noise opacity-40 pointer-events-none" />
-            <span className="text-mono text-xs text-accent-lime">
+            <span className="text-mono text-xs text-accent-neon">
               {project.title.toLowerCase()}
             </span>
             <span className="text-xs text-muted-foreground">prévia em breve</span>
