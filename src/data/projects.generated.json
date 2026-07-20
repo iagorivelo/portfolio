@@ -11,9 +11,9 @@
       "Mobile-first com Next.js, Tailwind e shadcn/ui"
     ],
     "screenshots": [
-      "/projects/eyebrow-shaping/01.png?v=1784549837711",
-      "/projects/eyebrow-shaping/02.png?v=1784549844563",
-      "/projects/eyebrow-shaping/03.png?v=1784549848192"
+      "/projects/eyebrow-shaping/01.png?v=1784551401689",
+      "/projects/eyebrow-shaping/02.png?v=1784551401702",
+      "/projects/eyebrow-shaping/03.png?v=1784551401716"
     ],
     "language": "TypeScript",
     "stack": [
@@ -43,8 +43,8 @@
       "Tema escuro nativo e layout responsivo"
     ],
     "screenshots": [
-      "/projects/tech-store/01.png?v=1784539496717",
-      "/projects/tech-store/02.png?v=1784539496724"
+      "/projects/tech-store/01.png?v=1784549854930",
+      "/projects/tech-store/02.png?v=1784549859145"
     ],
     "language": "JavaScript",
     "stack": [
@@ -62,10 +62,10 @@
     "pushedAt": "2026-07-07T20:13:02Z"
   },
   {
-    "name": "automatic-blog",
-    "title": "Automatic Blog",
+    "name": "automatic-news",
+    "title": "Automatic News",
     "description": "Notícias automatizadas que gera conteúdo com IA (Google Gemini) e persiste no Supabase, com roteamento dinâmico e deploy contínuo na Vercel.",
-    "longDescription": "Plataforma de blog com geração de conteúdo automatizada, roteamento dinâmico por slug e publicação contínua na edge da Vercel. Pensada para produzir e servir artigos com o mínimo de intervenção manual.",
+    "longDescription": "Plataforma de notícias com geração de conteúdo automatizada, roteamento dinâmico por slug e publicação contínua na edge da Vercel. Pensada para produzir e servir artigos com o mínimo de intervenção manual.",
     "highlights": [
       "Geração de conteúdo automatizada",
       "Roteamento dinâmico por slug",
@@ -73,8 +73,8 @@
       "TypeScript de ponta a ponta"
     ],
     "screenshots": [
-      "/projects/automatic-blog/01.png?v=1784539496705",
-      "/projects/automatic-blog/02.png?v=1784539496708"
+      "/projects/automatic-news/01.png?v=1784550327234",
+      "/projects/automatic-news/02.png?v=1784550327250"
     ],
     "language": "TypeScript",
     "stack": [
@@ -87,10 +87,10 @@
       "JWT"
     ],
     "type": "app",
-    "repo": "https://github.com/iagorivelo/automatic-blog",
+    "repo": "https://github.com/iagorivelo/automatic-news",
     "stars": 0,
     "featured": true,
-    "demo": "https://automatic-blog-phi.vercel.app",
+    "demo": "https://automatic-news.vercel.app",
     "pushedAt": "2026-07-07T18:47:02Z"
   },
   {
@@ -105,9 +105,9 @@
       "Tipagem estática com TypeScript"
     ],
     "screenshots": [
-      "/projects/valorant_data/01.png?v=1784539496726",
-      "/projects/valorant_data/02.png?v=1784539496728",
-      "/projects/valorant_data/03.png?v=1784539496736"
+      "/projects/valorant_data/01.png?v=1784550327268",
+      "/projects/valorant_data/02.png?v=1784550327275",
+      "/projects/valorant_data/03.png?v=1784550327323"
     ],
     "language": "TypeScript",
     "stack": [
@@ -135,8 +135,8 @@
       "UI responsiva"
     ],
     "screenshots": [
-      "/projects/search-repos/01.png?v=1784539496709",
-      "/projects/search-repos/02.png?v=1784539496711"
+      "/projects/search-repos/01.png?v=1784549958082",
+      "/projects/search-repos/02.png?v=1784550327255"
     ],
     "language": "TypeScript",
     "stack": [
@@ -165,7 +165,7 @@
       "Interface enxuta e responsiva"
     ],
     "screenshots": [
-      "/projects/busca-cep/01.png?v=1784539496709"
+      "/projects/busca-cep/01.png?v=1784549965455"
     ],
     "language": "TypeScript",
     "stack": [
