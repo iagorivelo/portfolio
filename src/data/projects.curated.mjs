@@ -61,7 +61,6 @@ export const curatedProjects = [
       { path: "/armas", label: "armas" },
       { path: "/mapas", label: "mapas" },
     ],
-    featured: true,
   },
   {
     name: "search-repos",
