@@ -1,5 +1,37 @@
 [
   {
+    "name": "eyebrow-shaping",
+    "title": "Studio Mariana Falcão",
+    "description": "Landing page para o Studio Mariana Falcão, de extensão de cílios e design de sobrancelhas em Recife, com agendamento pelo WhatsApp.",
+    "longDescription": "Landing page mobile-first para o Studio Mariana Falcão, especializado em extensão de cílios e design de sobrancelhas em Recife. Apresenta os serviços com valores e tempo de aplicação, portfólio de trabalhos, depoimentos e localização, levando ao agendamento direto pelo WhatsApp. Construída com Next.js e o App Router, React, TypeScript e Tailwind, com componentes shadcn/ui e micro-interações em Motion.",
+    "highlights": [
+      "Agendamento direto pelo WhatsApp",
+      "Catálogo de serviços com valores e tempo de aplicação",
+      "Portfólio, depoimentos e localização em página única",
+      "Mobile-first com Next.js, Tailwind e shadcn/ui"
+    ],
+    "screenshots": [
+      "/projects/eyebrow-shaping/01.png?v=1784549837711",
+      "/projects/eyebrow-shaping/02.png?v=1784549844563",
+      "/projects/eyebrow-shaping/03.png?v=1784549848192"
+    ],
+    "language": "TypeScript",
+    "stack": [
+      "Next.js",
+      "App Router",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Motion",
+      "Mobile-first"
+    ],
+    "type": "app",
+    "stars": 0,
+    "featured": true,
+    "demo": "https://studiomarianafalcao.vercel.app"
+  },
+  {
     "name": "tech-store",
     "title": "Tech Store",
     "description": "⚡ Loja de tecnologia com Next.js 16 e React 19: Server Components, catálogo com scroll infinito via Server Actions, carrinho e tema escuro.",

@@ -1,5 +1,39 @@
 export const curatedProjects = [
   {
+    name: "eyebrow-shaping",
+    title: "Studio Mariana Falcão",
+    description:
+      "Landing page para o Studio Mariana Falcão, de extensão de cílios e design de sobrancelhas em Recife, com agendamento pelo WhatsApp.",
+    longDescription:
+      "Landing page mobile-first para o Studio Mariana Falcão, especializado em extensão de cílios e design de sobrancelhas em Recife. Apresenta os serviços com valores e tempo de aplicação, portfólio de trabalhos, depoimentos e localização, levando ao agendamento direto pelo WhatsApp. Construída com Next.js e o App Router, React, TypeScript e Tailwind, com componentes shadcn/ui e micro-interações em Motion.",
+    highlights: [
+      "Agendamento direto pelo WhatsApp",
+      "Catálogo de serviços com valores e tempo de aplicação",
+      "Portfólio, depoimentos e localização em página única",
+      "Mobile-first com Next.js, Tailwind e shadcn/ui",
+    ],
+    screenshots: [],
+    language: "TypeScript",
+    stack: [
+      "Next.js",
+      "App Router",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Motion",
+      "Mobile-first",
+    ],
+    type: "app",
+    demo: "https://studiomarianafalcao.vercel.app",
+    shots: [
+      { label: "início" },
+      { path: "#servicos", label: "serviços" },
+      { path: "#portfolio", label: "portfólio" },
+    ],
+    featured: true,
+  },
+  {
     name: "tech-store",
     title: "Tech Store",
     longDescription:
