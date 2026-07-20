@@ -56,10 +56,10 @@ export const curatedProjects = [
     featured: true,
   },
   {
-    name: "automatic-blog",
-    title: "Automatic Blog",
+    name: "automatic-news",
+    title: "Automatic News",
     longDescription:
-      "Plataforma de blog com geração de conteúdo automatizada, roteamento dinâmico por slug e publicação contínua na edge da Vercel. Pensada para produzir e servir artigos com o mínimo de intervenção manual.",
+      "Plataforma de notícias com geração de conteúdo automatizada, roteamento dinâmico por slug e publicação contínua na edge da Vercel. Pensada para produzir e servir artigos com o mínimo de intervenção manual.",
     highlights: [
       "Geração de conteúdo automatizada",
       "Roteamento dinâmico por slug",
@@ -69,8 +69,8 @@ export const curatedProjects = [
     screenshots: [],
     language: "TypeScript",
     type: "app",
-    repo: "https://github.com/iagorivelo/automatic-blog",
-    demo: "https://automatic-blog-phi.vercel.app",
+    repo: "https://github.com/iagorivelo/automatic-news",
+    demo: "https://automatic-news.vercel.app",
     shots: [{ label: "home" }, { click: "a[href^='/post/']", label: "notícia em modal" }],
     featured: true,
   },
